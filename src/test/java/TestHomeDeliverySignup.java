@@ -212,13 +212,13 @@ public class TestHomeDeliverySignup{
 			driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 
 			 
-			if (device)
-				driver.findElement(By.xpath("(//button[@id=\"buttonMenu\"])[1]")).click();
+			if (device)	driver.findElement(By.xpath("(//button[@id=\"buttonMenu\"])[1]")).click();
 				
-				driver.findElement(By.xpath("//*[@aria-controls='#navPanel0' or @name='header.navi.tab.damen']")).click();
-				driver.findElement(By.xpath("//a[@name='header.navi.main.damen.schuhe']")).click();
-				driver.findElement(By.xpath("(//a[@name='header.navi.sub.damen.schuhe.damenschuhe-sneaker' or @name='left.navi.category.1:schuhe.2:sneaker'])[1]")).click();
+			driver.findElement(By.xpath("//*[@aria-controls='#navPanel0' or @name='header.navi.tab.damen']")).click();
+			driver.findElement(By.xpath("//a[@name='header.navi.main.damen.schuhe']")).click();
+			driver.findElement(By.xpath("(//a[@name='header.navi.sub.damen.schuhe.damenschuhe-sneaker' or @name='left.navi.category.1:schuhe.2:sneaker'])[1]")).click();
 			  	
+			//Navigating Menu
 			if (device){
 			  		Thread.sleep(2000);
 			  		driver.findElement(By.xpath("//SPAN[contains(text(),'Filtern / Sortieren')]")).click();
@@ -252,7 +252,7 @@ public class TestHomeDeliverySignup{
 			  		driver.findElement(By.xpath("//input[@name='price_to']")).sendKeys("10000");
 			  		Thread.sleep(500);
 			  		GetBrowserScreenshot("PriceTo"+targetEnvironment+".png");
-			  		driver.findElement(By.xpath("//input[contains(@value,'bernehmen')]")).click();
+			  		driver.findElement(By.xpath("//input[contains(@value,'Schlieﬂen')]")).click();
 			  	}
 			  	//Evaluate all responses
 		       
@@ -277,6 +277,7 @@ public class TestHomeDeliverySignup{
 		}catch	(Exception e) {
 			// TODO Auto-generated catch block
 			GetBrowserScreenshot("Error"+targetEnvironment+".png");
+			System.out.println("Error on "+ targetEnvironment);
 			e.printStackTrace();
 				
 		} finally {
